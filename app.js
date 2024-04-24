@@ -95,9 +95,7 @@ app.post("/add-cashout",async (req,res) => {
 
 // Route to update users
 app.post("/modify-users",async (req,res) => {
-  const docUsers = new GoogleSpreadsheet('19Pj1IChhONqJReZ5PrnRumxAJaz9zWtmZJ4434FxMFE', serviceAccountAuth);
-  let sheet = await docUsers.loadInfo() 
-  let rows = await sheet.getRows()
+  let rows = await sheetUser.getRows()
   console.log(rows)
   let {username,password,role,userId} = req.body
   console.log(req)
