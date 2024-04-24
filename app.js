@@ -98,7 +98,7 @@ app.post("/modify-users",async (req,res) => {
   let rows = await sheetUser.getRows()
   let {username,password,role,userId} = req.body
   console.log(req)
-  rows[fields[userId]].assign({username,password,role})
+  rows[userId].assign({username,password,role})
   await rows[2].save()
   res.json("success")
 
