@@ -95,7 +95,7 @@ app.post("/add-cashout",async (req,res) => {
 
 // Route to update users
 app.post("/modify-users",async (req,res) => {
-  //let rows = await sheetUser.getRows()
+  let rows = await sheetUser.getRows()
   let {username,password,role,userId} = req.body
   console.log(req)
   rows[fields[userId]].assign({username,password,role})
